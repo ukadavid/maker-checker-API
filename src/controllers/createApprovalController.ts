@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { createApprover as createApproverFromService } from '../services/approverService';
+import { createApprover as createApproverFromService } from '../services/createApproverService';
 import { CustomError } from '../exceptions';
 
 export async function createApprover(req: Request, res: Response): Promise<void> {
