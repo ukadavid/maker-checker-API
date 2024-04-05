@@ -1,15 +1,21 @@
+// controllers/userController.ts
+
 import { Request, Response } from 'express';
-import { createUser as createUserFromService } from '../services/userService';
+import { createUser as createUserFromService, CreateUserResponse } from '../services/userService';
 
 export async function createUser(req: Request, res: Response): Promise<void> {
-  try {
-    const { username, email, role } = req.body;
+    try {
+        const { username, email, role } = req.body;
 
-    const user = await createUserFromService(username, email, role);
+        const response: CreateUserResponse = await createUserFromService(username, email, role);
 
-    res.status(201).json(user);
-  } catch (error) {
-    console.error('Error creating user:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+        if (response.user) {
+          res.status(201).json(response.user);
+        } else {
+          res.status(400).json({ error: response.error });
+        }
+    } catch (error) {
+        console.error('Error creating user:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 }

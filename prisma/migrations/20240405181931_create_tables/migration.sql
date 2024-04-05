@@ -9,7 +9,7 @@ CREATE TYPE "RequestStatus" AS ENUM ('PENDING', 'APPROVED', 'DENIED', 'EXPIRED')
 
 -- CreateTable
 CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
+    "id" TEXT NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "role" "Role" NOT NULL,
@@ -21,8 +21,8 @@ CREATE TABLE "User" (
 
 -- CreateTable
 CREATE TABLE "Approver" (
-    "id" SERIAL NOT NULL,
-    "userId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "userId" TEXT NOT NULL,
     "approvedRequestTypes" "RequestType"[],
 
     CONSTRAINT "Approver_pkey" PRIMARY KEY ("id")
@@ -30,8 +30,8 @@ CREATE TABLE "Approver" (
 
 -- CreateTable
 CREATE TABLE "Request" (
-    "id" SERIAL NOT NULL,
-    "requesterId" INTEGER NOT NULL,
+    "id" TEXT NOT NULL,
+    "requesterId" TEXT NOT NULL,
     "requestType" "RequestType" NOT NULL,
     "description" TEXT,
     "details" TEXT,
@@ -42,6 +42,9 @@ CREATE TABLE "Request" (
 
     CONSTRAINT "Request_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey
 ALTER TABLE "Approver" ADD CONSTRAINT "Approver_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

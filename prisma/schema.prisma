@@ -14,9 +14,9 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(uuid())
   username  String
-  email     String
+  email     String   @unique
   role      Role
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -31,16 +31,16 @@ enum Role {
 }
 
 model Approver {
-  id                   Int           @id @default(autoincrement())
+  id                   String        @id @default(uuid())
   user                 User          @relation(fields: [userId], references: [id])
-  userId               Int
+  userId               String
   approvedRequestTypes RequestType[]
 }
 
 model Request {
-  id          Int           @id @default(autoincrement())
+  id          String        @id @default(uuid())
   requester   User          @relation(fields: [requesterId], references: [id])
-  requesterId Int
+  requesterId String
   requestType RequestType
   description String?
   details     String?
