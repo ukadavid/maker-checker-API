@@ -1,5 +1,3 @@
-// services/userService.ts
-
 import { PrismaClient, Role, User as UserModel } from '@prisma/client';
 import { Request, Response } from 'express';
 

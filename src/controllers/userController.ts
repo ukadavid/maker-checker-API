@@ -1,7 +1,6 @@
-// controllers/userController.ts
-
 import { Request, Response } from 'express';
 import { createUser as createUserFromService, CreateUserResponse } from '../services/userService';
+import { createApprover as createApproverFromService } from '../services/approverService';
 
 export async function createUser(req: Request, res: Response): Promise<void> {
     try {
