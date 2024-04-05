@@ -22,7 +22,6 @@ export async function approveRequestService(requestId: string, approverId: strin
 
 
     const today = new Date();
-    console.log(today, request.expiration);
     
   
     if (request.expiration < today) {
@@ -44,17 +43,19 @@ export async function approveRequestService(requestId: string, approverId: strin
     }
 
 for (const approvedType of approver.approvedRequestTypes) {
-    if (approvedType === "A") {
+     if (approvedType === "C") {
+        if (request.requestType === "C") {
+          return { error: 'Approver of type C cannot approve requests of type C'};
+        }
+      }
+      else if (approvedType === "B") {
+        if (request.requestType === "B" || request.requestType === "C") {
+          return { error: 'Approver of type B cannot approve requests of type B or C'};
+        }
+      } 
+      else if (approvedType === "A") {
       if (request.requestType === "A" || request.requestType === "B" || request.requestType === "C") {
         return { error: 'Sorry, you cannot approve requests'};
-      }
-    } else if (approvedType === "B") {
-      if (request.requestType === "B" || request.requestType === "C") {
-        return { error: 'Approver of type B cannot approve requests of type B or C'};
-      }
-    } else if (approvedType === "C") {
-      if (request.requestType === "C") {
-        return { error: 'Approver of type C cannot approve requests of type C'};
       }
     }
   }

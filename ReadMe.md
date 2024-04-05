@@ -93,7 +93,7 @@ The schema defines the database structure and relationships between entities:
     {
         "username": "TobePertera",
         "email": "tozeeda221q@gmail.com",
-        "requestTypes": ["B", "C"]
+        "requestTypes": ["C", "A"]
     }
     ```
 
@@ -126,9 +126,26 @@ The schema defines the database structure and relationships between entities:
     ```json
     {
         "requesterId": "5e1c916a-9a6f-4cbd-ad55-624fe4e73b72",
-        "requestType": "B",
+        "requestType": "C",
         "expiration": "2024-04-09T12:00:00Z"
     }
+    ```
+
+  - Response:
+
+    ```json
+    {
+    "id": "b3daee36-81d3-460e-9395-8dfd3fac7d26",
+    "requesterId": "7d508fa4-c119-4a34-971d-c13edf9dbbe4",
+    "requestType": "C",
+    "description": null,
+    "details": null,
+    "status": "PENDING",
+    "expiration": "2024-04-09T12:00:00.000Z",
+    "createdAt": "2024-04-05T22:47:14.133Z",
+    "updatedAt": "2024-04-05T22:47:14.133Z"
+
+}
     ```
 
 ### Approve Request
