@@ -12,9 +12,9 @@ const app = express()
 
 app.use(express.json());
 
-app.use('/users', userRoutes);
-app.use('/createApprovalUser', approvalRoute);
-app.use('/createrequests', requestRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/createApprovalUser', approvalRoute);
+app.use('/api/createrequests', requestRoutes);
 app.use('/api', approveRequestRoutes);
 app.use('/api', getUserIDRoute);
 
