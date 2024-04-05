@@ -10,6 +10,42 @@ This project is built using the following technologies:
 - TypeScript: A statically typed superset of JavaScript.
 - Prisma: A modern database toolkit for TypeScript and Node.js.
 
+```markdown
+# Setup Instructions
+
+## Environment Configuration
+
+1. Create a `.env` file in the root directory of your project.
+
+2. Add the following environment variables to the `.env` file:
+   ```
+
+   DATABASE_URL="postgres://makerchecker:XcembodjTv3ZX2UpwUBuiuPYnGSFEW2x@dpg-co83uc6v3ddc73b7tvjg-a.oregon-postgres.render.com/makerchecker_b67g"
+   PORT=3000
+
+   ```
+
+## Running the Application
+
+To run the application, follow these steps:
+
+1. Install dependencies by running:
+   ```
+
+   npm install
+
+   ```
+
+2. Start the server by running:
+   ```
+
+   npm start
+
+   ```
+
+This will start the application on port 3000 by default.
+```
+
 ## Schema
 
 The schema defines the database structure and relationships between entities:
