@@ -2,6 +2,16 @@
 
 This project implements the maker-checker functionality, allowing users to create requests which are then approved or denied by designated approvers.
 
+## Library
+
+This project has been published as maker-checker-cli-edubanc on the NPM library.
+
+To install the library
+
+```
+npm install maker-checker-cli-edubanc
+```
+
 ## Stack
 
 This project is built using the following technologies:

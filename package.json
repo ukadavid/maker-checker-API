@@ -1,17 +1,20 @@
 {
-  "name": "the-assignment-sterling",
-  "version": "1.0.0",
-  "description": "",
+  "name": "maker-checker-cli-edubanc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ukadavid/maker-checker-API.git"
+  },
+  "version": "1.0.1",
+  "description": "A component library for maker-checker operations with easy to reuse components for your project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tobechukwu Uka",
   "license": "ISC",
   "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.4",
     "nodemon": "^3.1.0",
@@ -20,7 +23,6 @@
   },
   "dependencies": {
     "@prisma/client": "^5.12.1",
-    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "prisma": "^5.12.1"
