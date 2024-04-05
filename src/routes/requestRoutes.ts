@@ -4,6 +4,6 @@ import { createRequest } from '../controllers/requestController';
 const router = express.Router();
 
 
-router.post('/:requestId', createRequest);
+router.post('/', createRequest);
 
 export default router;
