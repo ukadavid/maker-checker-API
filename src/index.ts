@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes';
 import approvalRoute  from './routes/approvalRoute';
 import requestRoutes from './routes/requestRoutes';
 import approveRequestRoutes from './routes/approveRequestRoutes';
+import getUserIDRoute from './routes/getUserIDRoute';
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use('/users', userRoutes);
 app.use('/createApprovalUser', approvalRoute);
 app.use('/createrequests', requestRoutes);
 app.use('/api', approveRequestRoutes);
+app.use('/api', getUserIDRoute);
 
 app.use(handleErrors);
 

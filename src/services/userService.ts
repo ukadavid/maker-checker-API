@@ -1,5 +1,7 @@
 import { PrismaClient, Role, User as UserModel } from '@prisma/client';
 import { Request, Response } from 'express';
+import { ResponseDTO } from '../Dto/userDTO';
+
 
 const prisma = new PrismaClient();
 
@@ -8,7 +10,7 @@ export interface CreateUserResponse {
   error?: string;
 }
 
-export async function createUser(username: string, email: string, role: Role): Promise<CreateUserResponse> {
+export async function createUser(username: string, email: string, role: Role): Promise<ResponseDTO> {
   try {
     const existingUser = await prisma.user.findUnique({
       where: {
