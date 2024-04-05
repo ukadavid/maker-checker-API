@@ -16,11 +16,11 @@ export async function getUserByIdService(userId: string): Promise<any> {
         });
 
         if (!user) {
-            throw new CustomError(404, 'User not found');
+            return { error: 'User not found' };
         }
 
         return user;
     } catch (error) {
-        throw new CustomError(500, 'Failed to fetch user details');
+        return { error: 'Failed to fetch user details'};
     }
 }

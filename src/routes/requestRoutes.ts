@@ -3,7 +3,7 @@ import { createRequest } from '../controllers/requestController';
 
 const router = express.Router();
 
-// POST /requests
-router.post('/', createRequest);
+
+router.post('/:requestId', createRequest);
 
 export default router;

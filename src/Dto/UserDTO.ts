@@ -1,6 +1,6 @@
 import { User as UserModel } from '@prisma/client';
 
-export interface ResponseDTO {
+export interface userDTO {
     user?: UserModel;
     error?: string;
   }

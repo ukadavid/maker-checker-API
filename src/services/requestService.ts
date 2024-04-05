@@ -12,12 +12,13 @@ export async function createRequest(requesterId: string, requestType: RequestTyp
     });
 
     if (!existingRequester) {
-      throw new CustomError(400, 'Invalid requester ID');
+      return { error: 'Invalid requester ID' };
     }
 
     const today = new Date();
     if (expiration < today) {
-      throw new CustomError(400, 'Invalid expiration date');
+      return { error: 'Invalid expiration date' };
+      
     }
 
     const request = await prisma.request.create({
@@ -30,6 +31,6 @@ export async function createRequest(requesterId: string, requestType: RequestTyp
 
     return request;
   } catch (error) {
-    throw new CustomError(500, 'Failed to create request');
+    return { error:  'Failed to create request'};
   }
 }

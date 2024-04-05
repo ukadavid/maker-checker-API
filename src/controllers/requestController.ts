@@ -1,12 +1,14 @@
 import { Request, Response } from 'express';
 import { createRequest as createRequestFromService } from '../services/requestService';
+import { requestDTO } from '../Dto/requestDTO';
 
 export async function createRequest(req: Request, res: Response): Promise<void> {
   try {
     // Put requesterId in the params
-    const { requesterId, requestType, expiration } = req.body;
+    const {requesterId} = req.params
+    const { requestType, expiration } = req.body;
 
-    const request = await createRequestFromService(requesterId, requestType, expiration);
+    const request : requestDTO = await createRequestFromService(requesterId, requestType, expiration);
 
     res.status(201).json(request);
   } catch (error) {

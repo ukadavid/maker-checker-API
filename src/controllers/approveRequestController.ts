@@ -7,7 +7,7 @@ export async function approveRequest(req: Request, res: Response): Promise<void>
     const { approverId, status } = req.body
     const updatedRequest = await approveRequestService(requestId, approverId, status);
 
-    res.status(200).json(updatedRequest); // Send success response with the updated request
+    res.status(200).json(updatedRequest);
   } catch (error) {
     console.error('Error approving request:', error);
     res.status(500).json({ error: 'Failed to approve request' });
