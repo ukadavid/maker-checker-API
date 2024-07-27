@@ -30,7 +30,7 @@ This project is built using the following technologies:
 2. Add the following environment variables to the `.env` file:
    ```
 
-   DATABASE_URL="postgres://makerchecker:XcembodjTv3ZX2UpwUBuiuPYnGSFEW2x@dpg-co83uc6v3ddc73b7tvjg-a.oregon-postgres.render.com/makerchecker_b67g"
+   DATABASE_URL=Render URL
    PORT=3000
 
    ```
